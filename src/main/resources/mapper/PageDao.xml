@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rumofuture.nemo.model.dao.PageDao">
+
+    <resultMap id="pageResultMap" type="com.rumofuture.nemo.model.domain.Page">
+        <id column="id" property="id"/>
+        <result column="image_url" property="imageUrl"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 保存 -->
+    <insert id="savePage" parameterType="page" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO page(book_id, image_url, create_time, update_time)
+        VALUES(#{book.id}, #{imageUrl}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!-- 删除 -->
+    <update id="deletePage" parameterType="long">
+        DELETE FROM page WHERE id = #{id}
+    </update>
+
+    <!-- 更新 -->
+    <update id="updatePage" parameterType="page">
+        UPDATE page
+        SET image_url = #{imageUrl}, update_time = #{updateTime}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 查找 -->
+    <select id="getPageById" parameterType="long" resultMap="pageResultMap">
+        SELECT * FROM page WHERE id = #{id}
+    </select>
+
+    <!-- 查找 -->
+    <select id="getPageListByBook" parameterType="long" resultMap="pageResultMap">
+        SELECT * FROM page WHERE book_id = #{id}
+    </select>
+</mapper>

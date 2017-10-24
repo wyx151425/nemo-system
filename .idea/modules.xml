@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nemo.iml" filepath="$PROJECT_DIR$/.idea/modules/nemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nemo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/nemo_main.iml" group="nemo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nemo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nemo_test.iml" group="nemo" />
+    </modules>
+  </component>
+</project>

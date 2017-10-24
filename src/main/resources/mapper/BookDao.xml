@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace是指明Mybatis扫描的目录，mapper是我们的Dao层的映射目录 -->
+<mapper namespace="com.rumofuture.nemo.model.dao.UserDao">
+
+    <resultMap id="bookResultMap" type="com.rumofuture.nemo.model.domain.Book">
+        <id column="id" property="id"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="name" property="name"/>
+        <result column="style" property="style"/>
+        <result column="introduction" property="introduction"/>
+        <result column="page_total" property="pageTotal"/>
+        <result column="favor_total" property="favorTotal"/>
+        <association column="author_id" property="author"
+                     select="com.rumofuture.nemo.model.dao.UserDao.getUserById"/>
+    </resultMap>
+
+    <!-- 保存 -->
+    <insert id="saveBook" parameterType="book" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO book(name, author_id, cover_url, style, introduction, page_total, favor_total, create_time, update_time)
+        VALUES(#{name}, #{author.id}, #{coverUrl}, #{style}, #{introduction}, #{pageTotal}, #{favorTotal}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!-- 更新 -->
+    <update id="updateBookCover" parameterType="book">
+        UPDATE book SET cover_url = #{coverUrl} WHERE id = #{id}
+    </update>
+
+    <!-- 更新 -->
+    <update id="updateBookInfo" parameterType="book">
+        UPDATE book SET
+        name = #{name},
+        style = #{style},
+        introduction = #{introduction},
+        update_time = #{updateTime}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteBook" parameterType="int">
+        DELETE FROM book WHERE id = #{id}
+    </delete>
+
+    <!-- bookId查找 -->
+    <select id="getBookById" parameterType="int" resultMap="bookResultMap">
+        SELECT * FROM book WHERE id = #{id}
+    </select>
+
+    <!-- userId查找 -->
+    <select id="getBookListByAuthor" parameterType="int" resultMap="bookResultMap">
+        SELECT * FROM book WHERE author_id = #{authorId}
+    </select>
+</mapper>
