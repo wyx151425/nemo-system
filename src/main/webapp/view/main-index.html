@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url(../images/rebc.gif);
+        }
+
+        .book-item {
+            margin: 2em auto;
+            background: #ffffff;
+            padding: 3em 2em;
+            box-shadow: 0 1px 4px 0 rgba(192, 192, 192, 0.5);
+            border-radius: 0.2em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: #ffffff none;
+            }
+
+            .mobile-container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .book-item {
+                border: 1px solid rgba(192, 192, 192, 0.5);
+                margin: 2em auto;
+                background: #ffffff;
+                padding: 1em;
+                box-shadow: 0 1px 4px 0 rgba(192, 192, 192, 0);
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container mobile-container">
+    <div class="row book-item">
+        <div class="col-xs-5 col-md-5">
+            <img src="../images/blue.jpg" class="img-responsive"/>
+            <span>Author Name</span>
+        </div>
+        <div class="col-xs-8 col-md-8">
+            <h3>Title</h3>
+            <p>Description of this book</p>
+            <p></p>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <img src="../images/cover.jpg" class="img-responsive">
+        </div>
+    </div>
+</div>
+</body>
+</html>
