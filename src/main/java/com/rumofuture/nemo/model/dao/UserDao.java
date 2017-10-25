@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * Created by WangZhenqi on 2017/10/24.
  */
 
-@Repository
+@Repository(value = "userDao")
 public interface UserDao {
     int saveUser(User user) throws SQLException;
     int updateUserAvatar(User user) throws SQLException;

@@ -1,6 +1,6 @@
 package com.rumofuture.nemo.util;
 
-import com.rumofuture.nemo.exception.NemoJSRRuntimeException;
+import com.rumofuture.nemo.exception.NemoException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.support.RequestContext;
 
@@ -25,10 +25,10 @@ public class DataValidationUtil {
         return true;
     }
 
-    public static void execute(BindingResult bindingResult, RequestContext requestContext) throws NemoJSRRuntimeException {
+    public static void execute(BindingResult bindingResult, RequestContext requestContext) throws NemoException {
         if (bindingResult.hasErrors()) {
             String code = bindingResult.getAllErrors().get(0).getCodes()[0];
-            throw new NemoJSRRuntimeException(requestContext.getMessage(code));
+            throw new NemoException(requestContext.getMessage(code));
         }
     }
 }

@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
  */
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -144,14 +144,15 @@ public class UserController {
         }
 
         // 根据前端提交的用户id获取具有完整信息的用户对象
-        User currentUser = (User) request.getSession().getAttribute(KeyConstant.CURRENT_USER);
-        User targetUser = userService.getUserById(currentUser.getId());
+        User targetUser = (User) request.getSession().getAttribute(KeyConstant.CURRENT_USER);
 
         if (null != targetUser) {
             // 如果原密码输入正确，则执行如下操作
             if (targetUser.getPassword().equals(userPasswordUpdateDTO.getOldPassword())) {
                 targetUser.setPassword(userPasswordUpdateDTO.getNewPassword());  // 设置新密码
                 // 更新用户信息，返回影响的数据库记录数
+                // 由于为targetUser设置了主键，而返回的对象与targetUser引用同一个对象
+                // 所以这里保存成功后的对象自动具备主键，无需后续注入
                 int result = userService.updateUserPassword(targetUser);
                 // 更新成功，执行如下操作
                 if (1 == result) {
@@ -180,7 +181,6 @@ public class UserController {
      * 5. 如果用户信息更新失败，则返回更新失败提示消息；
      *
      * @param user 前端数据封装成的User类对象
-     * @return responseEntity
      */
     @PostMapping(value = "/info/update")
     public Response<User> userInfoUpdate(

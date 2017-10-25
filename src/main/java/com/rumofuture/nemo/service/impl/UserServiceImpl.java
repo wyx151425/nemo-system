@@ -4,8 +4,6 @@ import com.rumofuture.nemo.model.dao.UserDao;
 import com.rumofuture.nemo.model.domain.User;
 import com.rumofuture.nemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,27 +12,67 @@ import java.sql.SQLException;
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
 
+    private final UserDao userDao;
+
     @Autowired
-    private UserDao userDao;
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     @Transactional
-    public void saveUser(User user) {
+    public int signUp(User user) {
         try {
-            userDao.saveUser(user);
+            return userDao.saveUser(user);
         } catch (SQLException e) {
-            e.printStackTrace();
+            return 0;
         }
     }
 
     @Override
-    public void getUserById(Long id) {
+    public User login(String mobilePhoneNumber) {
         try {
-            userDao.getUserById(id);
+            return userDao.getUserByMobilePhoneNumber(mobilePhoneNumber);
         } catch (SQLException e) {
-            e.printStackTrace();
+            return null;
         }
     }
 
+    @Override
+    @Transactional
+    public int updateUserPassword(User user) {
+        try {
+            return userDao.updateUserPassword(user);
+        } catch (SQLException e) {
+            return 0;
+        }
+    }
 
+    @Override
+    @Transactional
+    public int updateUserInfo(User user) {
+        try {
+            return userDao.updateUserInfo(user);
+        } catch (SQLException e) {
+            return 0;
+        }
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        try {
+            return userDao.getUserById(id);
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public User getUserByMobilePhoneNumber(String mobilePhoneNumber) {
+        try {
+            return userDao.getUserByMobilePhoneNumber(mobilePhoneNumber);
+        } catch (SQLException e) {
+            return null;
+        }
+    }
 }
