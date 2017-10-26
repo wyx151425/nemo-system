@@ -38,9 +38,13 @@ body {
         background-color: #ffffff;
     }
 
+    .navbar-default .navbar-brand {
+        color: #000000;
+    }
+
     .navbar-brand {
         color: #000000;
-        font-size: 1.4em;
+        font-size: 1.3em;
         font-weight: 700;
     }
 
@@ -75,6 +79,14 @@ body {
         position: absolute;
         padding: 1em 1.75em;
         background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .brand-left {
+        left: 2.5em;
+        bottom: 2.5em;
+    }
+
+    .brand-right {
         right: 2.5em;
         bottom: 2.5em;
     }
@@ -92,13 +104,13 @@ body {
         width: 100%;
         height: 1px;
         background-color: #000000;
-        margin: 0.5em auto;
+        margin: 0.4em auto;
     }
 
     .brand-note {
         margin: 0 auto;
         text-align: center;
-        font-size: 0.75em;
+        font-size: 0.85em;
         color: #000000;
         font-family: "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
     }
@@ -114,37 +126,37 @@ body {
         border-radius: 0;
     }
 
-    .author-avatar {
+    .book-item .author-avatar {
         width: 2em;
         height: 2em;
         border: 1px solid #ffffff;
         border-radius: 10em;
     }
 
-    .author-name {
+    .book-item .author-name {
         height: 2em;
         line-height: 2em;
         margin-left: -2em;
         color: #6f6f6f;
     }
 
-    .book-info {
+    .book-item .book-info {
         margin-top: 1em;
     }
 
-    .book-info .book-name {
-        font-size: 1em;
+    .book-item .book-info .book-name {
+        font-size: 1.1em;
         font-weight: 700;
         margin-bottom: 0.75em;
     }
 
-    .book-info .book-intro {
-        font-size: 0.875em;
+    .book-item .book-info .book-intro {
+        font-size: 0.9em;
         color: #6d6d6d;
         margin-bottom: 1em;
     }
 
-    .book-info .book-note {
+    .book-item .book-info .book-note {
 
     }
 
@@ -154,6 +166,7 @@ body {
     }
 
     .icon-style {
+        font-size: 1em;
         color: #c0c0c0;
     }
 
@@ -181,24 +194,126 @@ body {
         background-color: #ffffff;
     }
 
-    /*.bottom-navbar .icon-note {*/
-        /*text-align: center;*/
-    /*}*/
-
-    /*.bottom-navbar .glyphicon {*/
-        /*font-size: 1.2em;*/
-        /*text-align: center;*/
-    /*}*/
-
-    .bottom-navbar ul {
-        width: 100%;
-    }
-
     .bottom-navbar li {
         width: 24%;
         display: inline-block;
         text-align: center;
         font-size: 1.2em;
+    }
+
+    .bottom-navbar li span {
         color: #9d9d9d;
+    }
+
+    .bottom-navbar li.active span {
+        color: #000000;
+    }
+
+    .author-item {
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        border-color: rgba(192, 192, 192, 0.5);
+        margin: 0.5em auto;
+        background: #ffffff;
+        padding: 1em 1.5em;
+        box-shadow: 0 0 0 0 rgba(192, 192, 192, 0);
+        border-radius: 0;
+    }
+
+    .author-item .author-info {
+        margin-left: -1em;
+    }
+
+    .author-item .author-info .author-name {
+        font-size: 1.1em;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+    }
+
+    .author-item .author-info .author-motto {
+        font-size: 0.9em;
+        color: #6d6d6d;
+        margin-bottom: 1em;
+    }
+
+    .author-item .author-info .author-note {
+
+    }
+
+    .my-item {
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        border-color: rgba(192, 192, 192, 0.5);
+        margin: 0.5em auto;
+        background: #ffffff;
+        padding: 1em 1.5em;
+        box-shadow: 0 0 0 0 rgba(192, 192, 192, 0);
+        border-radius: 0;
+    }
+
+    .info {
+        margin-left: -0.8em;
+    }
+
+    .info .name {
+        font-size: 1.1em;
+        color: #000000;
+        margin-bottom: 0.3em;
+    }
+
+    .info .motto {
+        font-size: 0.9em;
+        color: #9d9d9d;
+    }
+
+    .list-container {
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        border-color: rgba(192, 192, 192, 0.5);
+        margin: 0.5em auto;
+        background: #ffffff;
+        box-shadow: 0 0 0 0 rgba(192, 192, 192, 0);
+        border-radius: 0;
+        padding: 0.8em 0;
+    }
+
+    .list-container .list-column {
+        width: 32.5%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .list-container .list-column .text {
+        color: #000000;
+        font-size: 0.9em;
+    }
+
+    .list-container .list-column .note {
+        color: #9d9d9d;
+        font-size: 0.9em;
+    }
+
+    .list-container .item-icon {
+        margin-left: 2em;
+        font-size: 1.3em;
+    }
+
+    .list-container .item-text {
+        margin-left: 1.4em;
+        font-size: 1.1em;
+    }
+
+    .list-container .item-line1 {
+        height: 1px;
+        background-color: rgba(192, 192, 192, 0.5);
+        margin: 0.8em 0;
+        display: block;
+    }
+
+    .list-container .item-line2 {
+        height: 1px;
+        background-color: rgba(192, 192, 192, 0.5);
+        margin: 0.8em 1.2em;
+        display: block;
     }
 }

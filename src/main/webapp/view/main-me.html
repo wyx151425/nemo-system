@@ -1,116 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>我</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemo</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/main.css"/>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <style>
-        p, span, ul, ol {
-            padding: 0;
-            margin: 0;
-        }
-
-        ul, ol {
-            list-style: none;
-        }
-
-        body {
-            background-image: url("../images/rebc.gif");
-        }
-
-        .navbar {
-            margin-bottom: 0;
-        }
-
-        .navbar-default {
-            background-color: #ffffff;
-            box-shadow: 0 1px 4px 0 rgba(104, 123, 144, 0.5);
-            border-radius: 0.2em;
-        }
-
-        .card {
-            margin-top: 3.2em;
-            background: #ffffff;
-            padding: 3em 2em;
-            box-shadow: 0 1px 4px 0 rgba(104, 123, 144, 0.5);
-            border-radius: 0.2em;
-        }
-
-        .list-container {
-            background: #ffffff;
-            padding: 0.5em 1.5em;
-            border: 1px solid rgba(192, 192, 192, 0);
-            box-shadow: 0 1px 5px 0 rgba(192, 192, 192, 0.875);
-            border-radius: 0.25em;
-            margin-bottom: 1em;
-        }
-
-        .list-container .list-item {
-            text-align: center;
-            margin: 0.875em auto;
-        }
-
-        .list-container .list-line {
-            height: 1px;
-            display: block;
-            background-color: rgba(192, 192, 192, 0.5);
-        }
-
-        .list-container .list-column {
-            margin-top: 0.875em;
-            margin-bottom: 0.5em;
-        }
-
-        .list-container .list-column p {
-            text-align: center;
-        }
-
-        .list-container .list-column span {
-            color: #c0c0c0;
-            text-align: center;
-            display: block;
-        }
-
-        p {
-            font-family: "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
-            font-size: 1em;
-            color: #000000;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-container {
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .card {
-                margin-top: 0;
-                background: #ffffff;
-                padding: 1em 0 0 0;
-                box-shadow: 0 1px 4px 0 rgba(104, 123, 144, 0);
-                border-radius: 0;
-            }
-
-            .list-container {
-                background: #ffffff;
-                padding: 0.5em 1.25em;
-                border: 1px solid rgba(192, 192, 192, 0.5);
-                box-shadow: 0 1px 5px 0 rgba(192, 192, 192, 0);
-                border-radius: 0;
-                margin-bottom: 1em;
-            }
-
-            .list-container .list-item {
-                text-align: left;
-                margin: 0.875em auto;
-            }
-        }
-    </style>
 </head>
 <body>
-<nav class="navbar navbar-default">
+<header class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -124,71 +24,68 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Main</a></li>
-                <li><a href="#">Album</a></li>
-                <li><a href="#">Discover</a></li>
-                <li class="active"><a href="#">Me</a></li>
+                <li><a href="#">搜索漫画</a></li>
+                <li><a href="#">搜索作者</a></li>
             </ul>
         </div>
     </div>
-</nav>
-<div class="container mobile-container">
-    <div class="row card">
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-xs-3 col-md-12">
-                    <img src="../images/blue.jpg" class="img-responsive" alt="avatar"/>
-                </div>
-                <div class="col-xs-9 col-md-12">
-                    <h3>Name</h3>
-                    <p>Motto of me</p>
-                </div>
+</header>
+<div class="container mobile">
+    <div class="my-item">
+        <div class="row">
+            <div class="col-xs-3 col-md-3">
+                <img src="../images/wzq.jpg" class="img-responsive"/>
+            </div>
+            <div class="col-xs-9 col-md-9 info">
+                <p class="name">王振琦</p>
+                <p class="motto">我是一个喜欢安卓热爱艺术的胖子</p>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="list-container">
-                <div class="list-item">
-                    <span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp;&nbsp;&nbsp;我的订阅</div>
-                <span class="list-line"></span>
-                <div class="row">
-                    <div class="col-xs-4 col-md-4 list-column">
-                        <p id="follow-total">0</p><span>关注</span>
-                    </div>
-                    <div class="col-xs-4 col-md-4 list-column">
-                        <p id="follower-total">0</p><span>粉丝</span>
-                    </div>
-                    <div class="col-xs-4 col-md-4 list-column">
-                        <p id="favorite-total">0</p><span>收藏</span>
-                    </div>
-                </div>
-            </div>
-            <ul class="list-container">
-                <li>
-                    <div class="list-item">
-                        <span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;&nbsp;&nbsp;我的漫画</div>
-                    <span class="list-line"></span>
-                </li>
-                <li>
-                    <div class="list-item">
-                        <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;我的关注</div>
-                    <span class="list-line"></span>
-                </li>
-                <li>
-                    <div class="list-item">
-                        <span class="glyphicon glyphicon-hd-video"></span>&nbsp;&nbsp;&nbsp;&nbsp;我的粉丝</div>
-                    <span class="list-line"></span>
-                </li>
-                <li>
-                    <div class="list-item">
-                        <span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;&nbsp;&nbsp;我的收藏</div>
-                    <span class="list-line"></span>
-                </li>
-                <li>
-                    <div class="list-item">
-                        <span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;&nbsp;我的设置</div>
-                </li>
-            </ul>
+    </div>
+    <div class="list-container">
+        <span class="glyphicon glyphicon-stats item-icon"></span>
+        <span class="item-text">我的订阅</span>
+        <span class="item-line1"></span>
+        <div class="list-column">
+            <p class="text">0</p>
+            <p class="note">关注</p>
         </div>
+        <div class="list-column">
+            <p class="text">0</p>
+            <p class="note">粉丝</p>
+        </div>
+        <div class="list-column">
+            <p class="text">0</p>
+            <p class="note">收藏</p>
+        </div>
+    </div>
+    <div class="list-container">
+        <ul>
+            <li>
+                <span class="glyphicon glyphicon-picture item-icon"></span>
+                <span class="item-text">我的漫画</span>
+                <span class="item-line2"></span>
+            </li>
+            <li>
+                <span class="glyphicon glyphicon-print item-icon"></span>
+                <span class="item-text">我的关注</span>
+                <span class="item-line2"></span>
+            </li>
+            <li>
+                <span class="glyphicon glyphicon-hd-video item-icon"></span>
+                <span class="item-text">我的粉丝</span>
+                <span class="item-line2"></span>
+            </li>
+            <li>
+                <span class="glyphicon glyphicon-tasks item-icon"></span>
+                <span class="item-text">我的收藏</span>
+                <span class="item-line2"></span>
+            </li>
+            <li>
+                <span class="glyphicon glyphicon-cog item-icon"></span>
+                <span class="item-text">我的设置</span>
+            </li>
+        </ul>
     </div>
 </div>
 </body>
