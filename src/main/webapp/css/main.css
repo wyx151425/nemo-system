@@ -1,0 +1,204 @@
+body {
+    background-image: url(../images/rebc.gif);
+}
+
+.book-item {
+    margin: 2em auto;
+    background: #ffffff;
+    padding: 3em;
+    box-shadow: 0 1px 4px 0 rgba(192, 192, 192, 0.5);
+    border-radius: 0.2em;
+}
+
+@media (max-width: 768px) {
+    ul, ol {
+        list-style: none;
+    }
+
+    html, body, div, footer, p, span, ul, ol, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        border: 0 solid rgba(192, 192, 192, 0.5);
+        border-bottom-width: 1px;
+        box-shadow: 0 0 4px 0 #9d9d9d;
+        height: 3em;
+        max-height: 3em;
+        width: 100%;
+        margin-bottom: 0;
+        position: fixed !important;
+        display: block;
+        top: 0;
+        z-index: 999;
+    }
+
+    .navbar-default {
+        background-color: #ffffff;
+    }
+
+    .navbar-brand {
+        color: #000000;
+        font-size: 1.4em;
+        font-weight: 700;
+    }
+
+    .navbar-collapse {
+        background-color: #ffffff;
+        border: 0 solid rgba(192, 192, 192, 0.5);
+        border-bottom-width: 1px;
+    }
+
+    body {
+        background: #fcfcfc none;
+    }
+
+    p, span {
+        font-size: 1em;
+        color: #000000;
+        font-family: "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
+    }
+
+    .mobile {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 3em;
+        margin-bottom: 4em;
+    }
+
+    .view-title {
+        transform: translate(0, 0);
+    }
+
+    .brand {
+        position: absolute;
+        padding: 1em 1.75em;
+        background-color: rgba(255, 255, 255, 0.75);
+        right: 2.5em;
+        bottom: 2.5em;
+    }
+
+    .brand-title {
+        margin: 0 auto 0.25em;
+        text-align: center;
+        font-size: 1.15em;
+        font-weight: 700;
+        color: #000000;
+        font-family: "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
+    }
+
+    .brand-line {
+        width: 100%;
+        height: 1px;
+        background-color: #000000;
+        margin: 0.5em auto;
+    }
+
+    .brand-note {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.75em;
+        color: #000000;
+        font-family: "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
+    }
+
+    .book-item {
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        border-color: rgba(192, 192, 192, 0.5);
+        margin: 0.5em auto;
+        background: #ffffff;
+        padding: 1em;
+        box-shadow: 0 0 0 0 rgba(192, 192, 192, 0);
+        border-radius: 0;
+    }
+
+    .author-avatar {
+        width: 2em;
+        height: 2em;
+        border: 1px solid #ffffff;
+        border-radius: 10em;
+    }
+
+    .author-name {
+        height: 2em;
+        line-height: 2em;
+        margin-left: -2em;
+        color: #6f6f6f;
+    }
+
+    .book-info {
+        margin-top: 1em;
+    }
+
+    .book-info .book-name {
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 0.75em;
+    }
+
+    .book-info .book-intro {
+        font-size: 0.875em;
+        color: #6d6d6d;
+        margin-bottom: 1em;
+    }
+
+    .book-info .book-note {
+
+    }
+
+    .icon-favor {
+        margin-left: 1em;
+        color: #c0c0c0;
+    }
+
+    .icon-style {
+        color: #c0c0c0;
+    }
+
+    .icon-text {
+        height: 1em;
+        line-height: 1em;
+        color: #c0c0c0;
+        font-size: 0.9em;
+        margin-left: 0.1em;
+    }
+
+    .bottom-navbar {
+        border: 0 solid rgba(192, 192, 192, 0.5);
+        border-top-width: 1px;
+        height: 4em;
+        line-height: 4em;
+        width: 100%;
+        bottom: 0;
+        position: fixed !important;
+        display: block;
+        z-index: 999;
+    }
+
+    .bottom-navbar-default {
+        background-color: #ffffff;
+    }
+
+    /*.bottom-navbar .icon-note {*/
+        /*text-align: center;*/
+    /*}*/
+
+    /*.bottom-navbar .glyphicon {*/
+        /*font-size: 1.2em;*/
+        /*text-align: center;*/
+    /*}*/
+
+    .bottom-navbar ul {
+        width: 100%;
+    }
+
+    .bottom-navbar li {
+        width: 24%;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.2em;
+        color: #9d9d9d;
+    }
+}

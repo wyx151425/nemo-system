@@ -2,60 +2,172 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemo</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/main.css"/>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background-image: url(../images/rebc.gif);
-        }
-
-        .book-item {
-            margin: 2em auto;
-            background: #ffffff;
-            padding: 3em 2em;
-            box-shadow: 0 1px 4px 0 rgba(192, 192, 192, 0.5);
-            border-radius: 0.2em;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                background: #ffffff none;
-            }
-
-            .mobile-container {
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .book-item {
-                border: 1px solid rgba(192, 192, 192, 0.5);
-                margin: 2em auto;
-                background: #ffffff;
-                padding: 1em;
-                box-shadow: 0 1px 4px 0 rgba(192, 192, 192, 0);
-                border-radius: 0;
-            }
-        }
-    </style>
 </head>
 <body>
-<div class="container mobile-container">
-    <div class="row book-item">
-        <div class="col-xs-5 col-md-5">
-            <img src="../images/blue.jpg" class="img-responsive"/>
-            <span>Author Name</span>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Nemo</a>
         </div>
-        <div class="col-xs-8 col-md-8">
-            <h3>Title</h3>
-            <p>Description of this book</p>
-            <p></p>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Main</a></li>
+                <li><a href="#">Album</a></li>
+                <li><a href="#">Discover</a></li>
+                <li class="active"><a href="#">Me</a></li>
+            </ul>
         </div>
-        <div class="col-xs-4 col-md-4">
-            <img src="../images/cover.jpg" class="img-responsive">
+    </div>
+</nav>
+<div class="container mobile">
+    <div class="view-title">
+        <img src="../images/originality.jpg" class="img-responsive" alt="main"/>
+        <div class="brand">
+            <p class="brand-title">Nemo</p>
+            <p class="brand-note">儒墨少年&nbsp;&nbsp;匠心之作</p>
+            <p class="brand-line"></p>
+            <p class="brand-note">作者&nbsp;&nbsp;王振琦</p>
+        </div>
+    </div>
+    <div class="book-item">
+        <div class="row">
+            <div class="col-xs-2 col-md-1">
+                <img src="../images/wzq.jpg" class="img-responsive author-avatar"/>
+            </div>
+            <div class="col-xs-10 col-md-11">
+                <span class="author-name">王振琦</span>
+            </div>
+        </div>
+        <div class="row book-info">
+            <div class="col-xs-8 col-md-8">
+                <p class="book-name">漫十年</p>
+                <p class="book-intro">我在璀璨的星空下&nbsp;&nbsp;守望未来的你</p>
+                <p class="book-note">
+                    <span class="glyphicon glyphicon-fire icon-style"></span>
+                    <span class="icon-text">清新</span>
+                    <span class="glyphicon glyphicon-star icon-favor"></span>
+                    <span class="icon-text">16</span>
+                </p>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <img src="../images/nemo.jpg" class="img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="book-item">
+        <div class="row">
+            <div class="col-xs-2 col-md-1">
+                <img src="../images/wzq.jpg" class="img-responsive author-avatar"/>
+            </div>
+            <div class="col-xs-10 col-md-11">
+                <span class="author-name">王振琦</span>
+            </div>
+        </div>
+        <div class="row book-info">
+            <div class="col-xs-8 col-md-8">
+                <p class="book-name">漫十年</p>
+                <p class="book-intro">我在璀璨的星空下&nbsp;&nbsp;守望未来的你</p>
+                <p class="book-note">
+                    <span class="glyphicon glyphicon-fire icon-style"></span>
+                    <span class="icon-text">清新</span>
+                    <span class="glyphicon glyphicon-star icon-favor"></span>
+                    <span class="icon-text">16</span>
+                </p>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <img src="../images/nemo.jpg" class="img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="book-item">
+        <div class="row">
+            <div class="col-xs-2 col-md-1">
+                <img src="../images/wzq.jpg" class="img-responsive author-avatar"/>
+            </div>
+            <div class="col-xs-10 col-md-11">
+                <span class="author-name">王振琦</span>
+            </div>
+        </div>
+        <div class="row book-info">
+            <div class="col-xs-8 col-md-8">
+                <p class="book-name">漫十年</p>
+                <p class="book-intro">我在璀璨的星空下&nbsp;&nbsp;守望未来的你</p>
+                <p class="book-note">
+                    <span class="glyphicon glyphicon-fire icon-style"></span>
+                    <span class="icon-text">清新</span>
+                    <span class="glyphicon glyphicon-star icon-favor"></span>
+                    <span class="icon-text">16</span>
+                </p>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <img src="../images/nemo.jpg" class="img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="book-item">
+        <div class="row">
+            <div class="col-xs-2 col-md-1">
+                <img src="../images/wzq.jpg" class="img-responsive author-avatar"/>
+            </div>
+            <div class="col-xs-10 col-md-11">
+                <span class="author-name">王振琦</span>
+            </div>
+        </div>
+        <div class="row book-info">
+            <div class="col-xs-8 col-md-8">
+                <p class="book-name">漫十年</p>
+                <p class="book-intro">我在璀璨的星空下&nbsp;&nbsp;守望未来的你</p>
+                <p class="book-note">
+                    <span class="glyphicon glyphicon-fire icon-style"></span>
+                    <span class="icon-text">清新</span>
+                    <span class="glyphicon glyphicon-star icon-favor"></span>
+                    <span class="icon-text">16</span>
+                </p>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <img src="../images/nemo.jpg" class="img-responsive">
+            </div>
         </div>
     </div>
 </div>
+<footer class="bottom-navbar bottom-navbar-default">
+    <!--<div class="row">-->
+        <!--<div class="col-xs-3">-->
+            <!--<p class="glyphicon glyphicon-home"></p>-->
+            <!--<p class="icon-note">主页</p>-->
+        <!--</div>-->
+        <!--<div class="col-xs-3">-->
+            <!--<p class="glyphicon glyphicon-fire"></p>-->
+            <!--<p class="icon-note">专辑</p>-->
+        <!--</div>-->
+        <!--<div class="col-xs-3">-->
+            <!--<p class="glyphicon glyphicon-map-marker"></p>-->
+            <!--<p class="icon-note">发现</p>-->
+        <!--</div>-->
+        <!--<div class="col-xs-3">-->
+            <!--<span class="glyphicon glyphicon-user"></span>-->
+            <!--<p class="icon-note">我</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <ul>
+        <li><a href=""><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href=""><span class="glyphicon glyphicon-fire"></span></a></li>
+        <li><a href=""><span class="glyphicon glyphicon-map-marker"></span></a></li>
+        <li><a href=""><span class="glyphicon glyphicon-user"></span></a></li>
+    </ul>
+</footer>
 </body>
 </html>
